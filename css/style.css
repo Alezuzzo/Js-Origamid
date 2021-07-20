@@ -154,7 +154,7 @@ body {
 
 .dados li {
   margin-bottom: 1rem;
-  font-family: ;
+  font-family: helvetica, arial;
 }
 
 .dados li::before {
@@ -183,7 +183,9 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .menu, grid-section, .copy {
+  .menu,
+  grid-section,
+  .copy {
     grid-column: 1;
   }
 
@@ -196,12 +198,14 @@ body {
     grid-column: 1/3;
   }
 
-  .faq-list, .dados, .mapa {
+  .faq-list,
+  .dados,
+  .mapa {
     grid-column: 1/3;
   }
 
   .grid-section h1 {
-    font-size: ;
+    font-size: 3rem;
   }
 
   .menu {
@@ -211,6 +215,4 @@ body {
   .copy {
     margin-top: 0px;
   }
-
-
 }
