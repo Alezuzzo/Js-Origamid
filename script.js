@@ -1,35 +1,29 @@
-//mostrando no console cada paragrafo do sitem
-const paragrafos = document.querySelectorAll('p');
-console.log(paragrafos);
+//adicionando a classe ativo a todos os itens do menu
 
-paragrafos.forEach((item) => {
-    console.log(item);
+const itemMenu = document.querySelectorAll('.menu a');
+itemMenu.forEach((item) => {
+    item.classList.add('ativo');
 });
 
-//mostrando o texto dos paragrafos no console
+//removendo classes ativo de todos itens do menu e mantendo apenas a primeira
 
-paragrafos.forEach((item) => {
-    console.log(item.innerText);
+const itemMenu = document.querySelectorAll('.menu a');
+itemMenu.forEach((item) => {
+    item.classList.remove('ativo');
 });
 
-//corrigindo erros abaixo
+itemMenu[0].classList.add('ativo');
+
+//verificando se imagens possuem atributo alt
 
 const imgs = document.querySelectorAll('img');
 
-imgs.forEach((item, index) => {
-    console.log(item, index);
-} );
-
-let i = 0;
-
-imgs.forEach(() => {
-    console.log(i++);
+imgs.forEach((img) => {
+    const possuiAtributo = img.hasAttribute('alt');
+    console.log(possuiAtributo);
 });
 
-imgs.forEach(() => {
-    console.log(i++);
-});
+//Modificando o href do link externo no menu
 
-imgs.forEach(() => i++);
-
-console.log(i);
+document.querySelector('a[href^="http"]');
+link.setAttribute('href', 'https://www.google.com/');
