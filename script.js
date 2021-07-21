@@ -23,3 +23,27 @@ function somaImagens() {
 window.onload = function() {
     somaImagens();
 }
+
+// Verifique se os links da pagina possuem o minimo recomendado para telas utilizadas para
+//com o dedo (indicado pelo google 48px/48px)
+
+const links = document.querySelectorAll('a');
+
+links.forEach((link) => {
+    const linkWidth = link.offsetWidth;
+    const linkHeight = link.offsetHeight;
+    if(linkWidth >= 48 && linkHeight >= 48) {
+        console.log(link, 'Possui boa acessibilidade')
+    } else {
+        console.log(link, 'Não possui boa acessibilidade')
+    }
+});
+
+// Se o browser for menor que 720px, adicione a classe menu-mobile ao menu
+
+const browserSmall = window.matchMedia('(max-width: 720px)').matches;
+
+if(browserSmall) {
+    const menu = document.querySelector('.menu');
+    menu.classList.add('menu-mobile');
+}
