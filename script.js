@@ -1,29 +1,25 @@
-//adicionando a classe ativo a todos os itens do menu
+//verificando a distancia da primeira imagem em relação ao topo da pagina
+const img = document.querySelector('copy');
+const imgTop = img.offsetTop;
 
-const itemMenu = document.querySelectorAll('.menu a');
-itemMenu.forEach((item) => {
-    item.classList.add('ativo');
-});
+console.log(imgTop);
 
-//removendo classes ativo de todos itens do menu e mantendo apenas a primeira
+//Retornando a soma da largura das imagens da
 
-const itemMenu = document.querySelectorAll('.menu a');
-itemMenu.forEach((item) => {
-    item.classList.remove('ativo');
-});
+function somaImagens() {
 
-itemMenu[0].classList.add('ativo');
+    const imagens = document.querySelectorAll('img');
 
-//verificando se imagens possuem atributo alt
+    let soma = 0;
 
-const imgs = document.querySelectorAll('img');
+    imagens.forEach((imagem) => {
+        soma += imagem.offsetwidth;
+    });
 
-imgs.forEach((img) => {
-    const possuiAtributo = img.hasAttribute('alt');
-    console.log(possuiAtributo);
-});
+    console.log(soma);
 
-//Modificando o href do link externo no menu
+}
 
-document.querySelector('a[href^="http"]');
-link.setAttribute('href', 'https://www.google.com/');
+window.onload = function() {
+    somaImagens();
+}
