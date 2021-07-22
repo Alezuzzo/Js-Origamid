@@ -1,8 +1,6 @@
-const img = document.querySelector('img');
+const linkExterno = document.querySelector('a[href^="http"]');
+function handleLinkExterno(event) {
+    event.preventDefault();
+}
 
-function callback(event) {
-    console.log(event);
-} 
-
-img.addEventListener('click', callback);
-
+linkExterno.addEventListener('click', handleLinkExterno);
