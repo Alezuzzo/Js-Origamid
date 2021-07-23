@@ -1,57 +1,23 @@
-/*Quando o usuário clicar nos links internos do site, adicione a classe ativo ao item clicado e remova
-dos demais itens caso eles possuam a mesma. Previna o comportamento padrão desses links
-*/
+//Duplique o menu e adicione ele em copy
 
-const itemClick = document.querySelectorAll("a[href^='#']");
+const menu = document.querySelector('.menu');
+const menu = document.querySelector('.copy');
 
+const cloneMenu = menu.cloneNode(true);
+copy.appendChild(cloneMenu);
 
-function handleLink (event) {
-    event.preventDefault();
-    itemClick.forEach((link) => {
-        link.classList.remove("ativo");
-    })
-    event.currentTarget.classList.add("ativo");
-}
+//Selecione o primeiro dt da dl de faq
 
-forEach((link) => {
-    link.addEventListener("click",handleLink);
-})
+const faq = document.querySelector('.faq');
+const primeiroDt = faq.faq.querySelector('dt');
 
-/* Selecione todos os elementos do site começando a partir do body, ao clique mostre exatamente quais
-elementos estão sendo clicados 
-*/
+//Selecione o DD referente ao primeiro DT
 
-const todosElementos = document.querySelectorAll('body *');
+const proximoDD = primeiroDt.nextElementSibling;
 
-function handleelemento(event) {
-    console.log(event.currentTarget)
-}
+console.log(proximoDD.remove);
 
-todosElementos.forEach((elemento) => {
-    elemento.addEventListener('click', handleElemento);
-})
+//substitua o conteúdo html de .faq pelo de .animais
+const animais = document.querySelector('.animais');
 
-/* Utilizando o código anterior, ao invés de mostrar no console, remova o elemento que está sendo clicado,
-o metodo remove() remove um elemento
-*/
-
-/*
-function handleelemento(event) {
-    event.currentTarget.remove();
-}
-
-todosElementos.forEach((elemento) => {
-    elemento.addEventListener('click', handleElemento);
-})
-*/
-
-//Se o usuario clicar ca tecla (t), aumente todo o texto do site.
-
-function handleClickT(event) {
-    console.log(event.key);
-    if(event.key === 't') {
-        document.documentElement.classList.toggle('textomaior');
-    }
-}
-
-window.addEventListener('keydown', handleClickT);
+faq.innerHTML = animais.innerHTML;
