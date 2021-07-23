@@ -1,13 +1,7 @@
-const h1 = document.querySelector('h1');
-
-function handleEvent(event) {
-    console.log(event.type, event);
+function handleKeyboard(event) {
+    if(event.key === 'a') {
+        document.body.classList.toggle('azul');
+    }
 }
 
-h1.addEventListener('click', handleEvent);
-h1.addEventListener('mouseenter', handleEvent);
-h1.addEventListener('mousemove', handleEvent);
-
-window.addEventListener('scroll', handleEvent);
-window.addEventListener('resize', handleEvent);
-window.addEventListener('keydown', handleEvent);
+window.addEventListener('keydown', handleKeyboard);
